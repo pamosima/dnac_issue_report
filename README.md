@@ -56,8 +56,8 @@ To use this application, you will need the following:
     webexRoomId = "Webex Teams roomId" 
 
     # Optional: eCall Notifications
-    ecallUSERNAME = "eCall username"
-    ecallPASSWORD = "eCall password"
+    ecallUsername = "eCall username"
+    ecallPassword = "eCall password"
    ```
 
    Note: If using Notification, please provide corresponding optional information.
