@@ -94,6 +94,29 @@ By default, the application will run once and exit. To run the application on a 
 ```
 0 * * * * ~/code/dnac_issue_report/venv/bin/python ~/code/dnac_issue_report/dnac_issue_report_webex.py
 ```
+## Examples
+
+### Print to Console
+```
+Cisco DNA Center Issue Report
+Occurrence: 25.04.2023 15:52:50
+---
+No of Issues: P1=0 P2=6 P3=1 P4=0
+---
+List of P1 & P2 Issues:
+P2: The RADIUS server '192.168.99.14:1812,1813' is not responding to requests being made from the network device 'C9200-24P-1'
+P2: The RADIUS server '192.168.99.13:1812,1813' is not responding to requests being made from the network device 'C9200-24P-2'
+P2: The RADIUS server '192.168.99.14:1812,1813' is not responding to requests being made from the network device 'wlsn-border-1'
+P2: The RADIUS server '192.168.99.13:1812,1813' is not responding to requests being made from the network device 'C9300-24T-1'
+---
+```
+
+### Webex Notification
+![image](https://user-images.githubusercontent.com/16715420/234295585-59d45ec5-ad01-4a18-b45f-ce00ca82546f.png)
+
+### SMS Notification
+![image](https://user-images.githubusercontent.com/16715420/234299137-10b0e7a4-ac36-4336-aee1-c62bf8aeaab4.png)
+
 
 ## Contributing
 
