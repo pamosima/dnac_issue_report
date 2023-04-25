@@ -25,7 +25,7 @@ To use this application, you will need the following:
    cd dnac_issue_report
    ```
 
-3. 
+3. Create a Python virtual environment:
    ```
    python -m venv venv
    source venv/bin/activate
