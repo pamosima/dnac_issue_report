@@ -37,7 +37,7 @@ To use this application, you will need the following:
    pip install -r requirements.txt
    ```
 
-5. Create an enviroment file:
+5. Create an environment file:
 
    ```
    cp .env.sample .env
