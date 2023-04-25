@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center Issue Report Console Script.
+"""Cisco DNA Center Issue Report Webex Script.
 
 Copyright (c) 2023 Cisco and/or its affiliates.
 

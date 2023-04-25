@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Cisco DNA Center Issue Report Console Script.
+"""Cisco DNA Center Issue Report eCall Script.
 
 Copyright (c) 2023 Cisco and/or its affiliates.
 
@@ -34,12 +34,11 @@ from dotenv import load_dotenv
 from datetime import datetime
 load_dotenv()
 
-dnac_username = os.getenv('dnacUSERNAME')
-dnac_password = os.getenv('dnacPASSWORD')
+dnac_username = os.getenv('dnacUsername')
+dnac_password = os.getenv('dnacPassword')
 dnac_base_url = os.getenv('dnacIP')
-
-ecall_username = os.getenv('ecallUSERNAME')
-ecall_password = os.getenv('ecallPASSWORD')
+ecall_username = os.getenv('ecallUsername')
+ecall_password = os.getenv('ecallPassword')
 
 
 # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 1.2.10

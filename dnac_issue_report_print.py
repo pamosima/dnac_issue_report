@@ -38,8 +38,6 @@ load_dotenv()
 dnac_username = os.getenv('dnacUsername')
 dnac_password = os.getenv('dnacPassword')
 dnac_base_url = os.getenv('dnacIP')
-webex_token = os.getenv('webexToken')
-webex_room_id = os.getenv('webexRoomId')
 
 # Create a DNACenterAPI connection object; it uses DNA Center username and password, with DNA Center API version 1.2.10
 # The base_url used by default is `from dnacentersdk.config import DEFAULT_BASE_URL`
@@ -49,8 +47,6 @@ dnac = DNACenterAPI(username=dnac_username,
                    version='2.3.3.0', 
                    verify=False,
                    debug=True)
-
-webex = WebexTeamsAPI(access_token=webex_token)
 
 issueP1=dnac.issues.issues(priority="p1", issueStatus="ACTIVE")
 issueP2=dnac.issues.issues(priority="p2", issueStatus="ACTIVE")
