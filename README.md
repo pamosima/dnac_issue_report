@@ -1,73 +1,119 @@
 # Cisco DNA Center Issue Report
 
-*Cisco DNA Center Issue Report using E-Maill notification*
+This is a Python application that utilizes the Cisco DNA Center API to report issues related to network devices managed by Cisco DNA Center. The application can be configured to run on a regular basis using crontab and can send notifications via Webex or SMS using eCall REST API.
 
----
+## Prerequisites
 
-**ToDo's:**
+To use this application, you will need the following:
 
-- [ ] Consider writing your README first.  Doing so helps you clarify your intent, focuses your project, and it is much more fun to write documentation at the beginning of a project than at the end of one, see:
-    - [Readme Driven Development](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
-    - [GitHub Guides: Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-- [ ] Ensure you put the [license and copyright header](./HEADER) at the top of all your source code files.
-- [ ] Be mindful of the third-party materials you use and ensure you follow Cisco's policies for creating and sharing Cisco Sample Code.
-
----
-
-## Motivation
-
-Include a short description of the motivation behind the creation and maintenance of the project.  Explain **why** the project exists.
-
-## Show Me!
-
-What visual, if shown, clearly articulates the impact of what you have created?  In as concise a visualization as possible (code sample, CLI output, animated GIF, or screenshot) show what your project makes possible.
-
-## Features
-
-Include a succinct summary of the features/capabilities of your project.
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Technologies & Frameworks Used
-
-This is Cisco Sample Code!  What Cisco and third-party technologies are you working with?  Are you using a coding framework or software stack?  A simple list will set the context for your project.
-
-**Cisco Products & Services:**
-
-- Product
-- Service
-
-**Third-Party Products & Services:**
-
-- Product
-- Service
-
-**Tools & Frameworks:**
-
-- Framework 1
-- Automation Tool 2
-
-## Usage
-
-If people like your project, they will want to use it.  Show them how.
+- Python 3.x
+- Cisco DNA Center > 2.3.3.x
+- Webex account (optional)
+- eCall REST API account (optional)
 
 ## Installation
 
-Provide a step-by-step series of examples and explanations for how to install your project and its dependencies.
+1. Clone this repository to your local machine using the following command:
+
+   ```
+   git clone https://github.com/pamosima/dnac_issue_report.git
+   ```
+
+2. Navigate to the repository directory:
+
+   ```
+   cd dnac_issue_report
+   ```
+
+3. 
+   ```
+   python -m venv venv
+   source venv/bin/activate
+   ```
+
+4. Install the required Python packages:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+5. Create an enviroment file:
+
+   ```
+   cp .env.sample .env
+   ```
+
+5. Open `.env` and update the following parameters:
+
+   ```
+    # Cisco DNA Center
+    dnacIP = "Cisco DNA Center URL"
+    dnacUsername = "Cisco DNA Center username"
+    dnacPassword = "Cisco DNA Center password"
+
+    # Optional: Webex Notifications
+    webexToken = "Webex Teams access token"
+    webexRoomId = "Webex Teams roomId" 
+
+    # Optional: eCall Notifications
+    ecallUSERNAME = "eCall username"
+    ecallPASSWORD = "eCall password"
+   ```
+
+   Note: If using Notification, please provide corresponding optional information.
+
+## Usage
+
+To run the application, simply execute the following command:
+
+### Print to console
+
+```
+python dnac_issue_report_print.py
+```
+
+The application will retrieve a list of open issues and print the information to the console.
+
+### Send notifcations via Webex
+
+```
+python dnac_issue_report_webex.py
+```
+The application will retrieve a list of open issues and send notifications via Webex.
+
+### Send notifcations via eCall (SMS)
+
+```
+python dnac_issue_report_webex.py
+```
+The application will retrieve a list of open issues and send notifications via SMS.
+
+### Send notifcations on regular basis
+By default, the application will run once and exit. To run the application on a regular basis, you can use crontab. For example, to run the application every hour, you can add the following line to your crontab:
+
+```
+0 * * * * ~/code/dnac_issue_report/venv/bin/python ~/code/dnac_issue_report/dnac_issue_report_webex.py
+```
+
+## Contributing
+
+If you would like to contribute to this project, please fork the repository and submit a pull request.
 
 ## Authors & Maintainers
 
-Smart people responsible for the creation and maintenance of this project:
+People responsible for the creation and maintenance of this project:
 
 - Patrick Mosimann <pamosima@cisco.com>
 
-## Credits
+## Contributing
 
-Give proper credit.  Inspired by another project or article?  Was your work made easier by a tutorial?  Include links to the people, projects, and resources that were influential in the creation of this project.
+If you would like to contribute to this project, please fork the repository and submit a pull request.
 
 ## License
 
 This project is licensed to you under the terms of the [Cisco Sample
 Code License](./LICENSE).
+
+## Issues/Comments
+
+Please post any issues or comments directly on GitHub.
