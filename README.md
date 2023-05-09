@@ -47,7 +47,7 @@ To use this application, you will need the following:
 
    ```
     # Cisco DNA Center
-    dnacIP = "Cisco DNA Center URL"
+    dnacIP = "Cisco DNA Center URL" #example: dnacIP = "https://<fqdn or ip>:443"
     dnacUsername = "Cisco DNA Center username"
     dnacPassword = "Cisco DNA Center password"
 
